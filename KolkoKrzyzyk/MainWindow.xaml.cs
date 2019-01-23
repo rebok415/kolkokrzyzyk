@@ -20,9 +20,25 @@ namespace KolkoKrzyzyk
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Button> graPrzyciski;
+
         public MainWindow()
         {
             InitializeComponent();
+            //implementacja przyciskanych pol do gry
+            graPrzyciski = new List<Button>();
+        
+            graPrzyciski.Add(wiersz1pole1);
+            graPrzyciski.Add(wiersz1pole2);
+            graPrzyciski.Add(wiersz1pole3);
+
+            graPrzyciski.Add(wiersz2pole1);
+            graPrzyciski.Add(wiersz2pole2);
+            graPrzyciski.Add(wiersz2pole3);
+
+            graPrzyciski.Add(wiersz3pole1);
+            graPrzyciski.Add(wiersz3pole2);
+            graPrzyciski.Add(wiersz3pole3);
         }
     }
 }
