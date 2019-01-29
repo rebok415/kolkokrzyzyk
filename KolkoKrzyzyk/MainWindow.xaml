@@ -21,14 +21,20 @@
             <ColumnDefinition Width="120"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button Name="wiersz1pole1" Grid.Column="0" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz1pole2" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz1pole3" Grid.Column="2" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial" />
-        <Button Name="wiersz2pole1" Grid.Column="0" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz2pole2" Grid.Column="1" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz2pole3" Grid.Column="2" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz3pole1" Grid.Column="0" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz3pole2" Grid.Column="1" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
-        <Button Name="wiersz3pole3" Grid.Column="2" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36"  FontFamily="arial"/>
+        <Button Name="wiersz1pole1" Grid.Column="0" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz1pole2" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz1pole3" Grid.Column="2" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial" />
+        <Button Name="wiersz2pole1" Grid.Column="0" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz2pole2" Grid.Column="1" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz2pole3" Grid.Column="2" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz3pole1" Grid.Column="0" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz3pole2" Grid.Column="1" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+        <Button Name="wiersz3pole3" Grid.Column="2" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
+    
+
+        <Grid Grid.Column="0" Grid.Row="4" Margin="10,10,1,-106" Grid.ColumnSpan="2">
+            <Label Name="wygrywaX" Grid.Column="1" Grid.Row="0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+            <Label Name="wygrywa0" Grid.Column="1" Grid.Row="1" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+        </Grid>
     </Grid>
 </Window>
