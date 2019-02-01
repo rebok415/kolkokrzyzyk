@@ -30,11 +30,15 @@
         <Button Name="wiersz3pole1" Grid.Column="0" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
         <Button Name="wiersz3pole2" Grid.Column="1" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
         <Button Name="wiersz3pole3" Grid.Column="2" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
-    
 
-        <Grid Grid.Column="0" Grid.Row="4" Margin="10,10,1,-106" Grid.ColumnSpan="2">
-            <Label Name="wygrywaX" Grid.Column="1" Grid.Row="0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
-            <Label Name="wygrywa0" Grid.Column="1" Grid.Row="1" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+
+        <Grid Grid.Column="0" Grid.Row="4" Margin="10,10,10,-106" Grid.ColumnSpan="3">
+            <Label Name="gracz1" Content="gracz 1" Width="159" Height="68" FontSize="36" Margin="0,0,181,149" />
+            <Label Name="gracz2" Content="gracz 2" Height="68" FontSize="36" Margin="171,0,0,149" />
+            <Label Name="pkt" Content="pkt:" Height="68" FontSize="36" Margin="2,89,169,60" />
+            <Label Name="wygrywaX" Grid.Column="0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="87" Height="68" FontSize="36" Margin="72,89,181,60"/>
+            <Label Name="pkt2" Content="pkt:" Height="68" FontSize="36" Margin="171,89,0,60" />
+            <Label Name="wygrywa0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84" Height="68" FontSize="36" Margin="246,89,10,60"/>
         </Grid>
     </Grid>
 </Window>

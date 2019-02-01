@@ -15,6 +15,11 @@ using System.Windows.Shapes;
 
 namespace KolkoKrzyzyk
 {
+    class Stale
+    {
+        public const string O_ZNAK = "O";
+        public const string X_ZNAK = "X";
+    }
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
@@ -75,7 +80,8 @@ namespace KolkoKrzyzyk
             GraStatus status = sprawdzPoziom();
             if (status.jesliKoniecGry())
             {
-                     
+                zakonczGre();
+                aktualizujStatus(status);
                 if (status.zwyciezca == Stale.O_ZNAK)
                     MessageBox.Show("gracz 2 wygrywa!");
                 else
@@ -83,15 +89,11 @@ namespace KolkoKrzyzyk
                 return true;
             }
 
-            //sprawdzanie poziomu
             status = sprawdzPoziom();
-
-            //sprawdzanie statusu gry
             if (status.jesliKoniecGry())
             {
                 zakonczGre();
                 aktualizujStatus(status);
-
                 if (status.zwyciezca == Stale.O_ZNAK)
                     MessageBox.Show("gracz 2 wygrywa!");
                 else
@@ -99,16 +101,38 @@ namespace KolkoKrzyzyk
                 return true;
             }
 
-            status = sprawdzPoziom();
+            status = sprawdzPion();
             if (status.jesliKoniecGry())
             {
-                  
+                zakonczGre();
+                aktualizujStatus(status);
                 if (status.zwyciezca == Stale.O_ZNAK)
                     MessageBox.Show("gracz 2 wygrywa!");
                 else
                     MessageBox.Show("gracz 1 wygrywa!");
                 return true;
             }
+
+            status = sprawdzPrzekatna();
+            if (status.jesliKoniecGry())
+            {
+                zakonczGre();
+                aktualizujStatus(status);
+                if (status.zwyciezca == Stale.O_ZNAK)
+                    MessageBox.Show("gracz 2 wygrywa!");
+                else
+                    MessageBox.Show("gracz 1 wygrywa!");
+                return true;
+            }
+
+            if (sprawdzCzyRemis())
+            {
+                zakonczGre();
+                aktualizujStatus(new GraStatus(true, "", true));
+                MessageBox.Show("Gra zakończona bez zwycięzcy!");
+                return true;
+            }
+
             return false;
         }
 
@@ -146,36 +170,116 @@ namespace KolkoKrzyzyk
             string zwyciezca = "";
             
             //sprawdzanie co w danym momencie jest nacisniete
+
             if ( wiersz1pole1.Content.Equals( wiersz1pole2.Content)
-                &&  wiersz1pole1.Content.Equals( wiersz1pole3.Content)
-                &&  wiersz1pole2.Content.Equals( wiersz1pole3.Content)
+                && wiersz1pole1.Content.Equals( wiersz1pole3.Content)
+                && wiersz1pole2.Content.Equals( wiersz1pole3.Content)
                 && !wiersz1pole1.Content.Equals(""))
             {
                 
                 koniecGry = true;
-                zwyciezca = Convert.ToString( wiersz1pole1.Content);
+                zwyciezca = Convert.ToString(wiersz1pole1.Content);
             }
             else if ( wiersz2pole1.Content.Equals( wiersz2pole2.Content)
-                    &&  wiersz2pole1.Content.Equals( wiersz2pole3.Content)
-                    &&  wiersz2pole2.Content.Equals( wiersz2pole3.Content)
+                    && wiersz2pole1.Content.Equals( wiersz2pole3.Content)
+                    && wiersz2pole2.Content.Equals( wiersz2pole3.Content)
                     && !wiersz2pole1.Content.Equals(""))
             {
                 
                 koniecGry = true;
-                zwyciezca = Convert.ToString( wiersz2pole1.Content);
+                zwyciezca = Convert.ToString(wiersz2pole1.Content);
             }
             else if ( wiersz3pole1.Content.Equals( wiersz3pole2.Content)
-                    &&  wiersz3pole1.Content.Equals( wiersz3pole3.Content)
-                    &&  wiersz3pole2.Content.Equals( wiersz3pole3.Content)
+                    && wiersz3pole1.Content.Equals( wiersz3pole3.Content)
+                    && wiersz3pole2.Content.Equals( wiersz3pole3.Content)
                     && !wiersz3pole1.Content.Equals(""))
             {
                 
                 koniecGry = true;
-                zwyciezca = Convert.ToString( wiersz3pole1.Content);
+                zwyciezca = Convert.ToString(wiersz3pole1.Content);
             }
-            return new GraStatus(koniecGry, zwyciezca);
+            return new GraStatus(koniecGry, zwyciezca, false);
         }
 
+        private GraStatus sprawdzPion()
+        {
+            bool koniecGry = false;
+            string zwyciezca = "";
+            // sprawdzenie wygranej w pionie
+
+            if (wiersz1pole1.Content.Equals(wiersz2pole1.Content)
+                && wiersz1pole1.Content.Equals(wiersz3pole1.Content)
+                && wiersz2pole1.Content.Equals(wiersz3pole1.Content)
+                && !wiersz1pole1.Content.Equals(""))
+            {
+                
+                koniecGry = true;
+                zwyciezca = Convert.ToString(wiersz1pole1.Content);
+            }
+            else if (wiersz2pole2.Content.Equals(wiersz2pole2.Content)
+                    && wiersz1pole2.Content.Equals(wiersz3pole2.Content)
+                    && wiersz2pole2.Content.Equals(wiersz3pole2.Content)
+                    && !wiersz1pole2.Content.Equals(""))
+            {
+               
+                koniecGry = true;
+                zwyciezca = Convert.ToString(wiersz1pole2.Content);
+            }
+            else if (wiersz1pole3.Content.Equals(wiersz2pole3.Content)
+                    && wiersz1pole3.Content.Equals(wiersz3pole3.Content)
+                    && wiersz2pole3.Content.Equals(wiersz3pole3.Content)
+                    && !wiersz1pole3.Content.Equals(""))
+            {
+                
+                koniecGry = true;
+                zwyciezca = Convert.ToString(wiersz1pole3.Content);
+            }
+
+            return new GraStatus(koniecGry, zwyciezca, false);
+        }
+
+        private GraStatus sprawdzPrzekatna()
+        {
+            bool koniecGry = false;
+            string zwyciezca = "";
+            // wprawdzenie wygranej po przekatnej
+
+            if (wiersz1pole1.Content.Equals(wiersz2pole2.Content)
+                && wiersz1pole1.Content.Equals(wiersz3pole3.Content)
+                && wiersz2pole2.Content.Equals(wiersz3pole3.Content)
+                && !wiersz1pole1.Content.Equals(""))
+            {
+                
+                koniecGry = true;
+                zwyciezca = Convert.ToString(wiersz1pole1.Content);
+            }
+            else if (wiersz3pole1.Content.Equals(wiersz2pole2.Content)
+                    && wiersz3pole1.Content.Equals(wiersz1pole3.Content)
+                    && wiersz2pole2.Content.Equals(wiersz1pole3.Content)
+                    && !wiersz3pole1.Content.Equals(""))
+            {
+                
+                koniecGry = true;
+                zwyciezca = Convert.ToString(wiersz3pole1.Content);
+            }
+
+            return new GraStatus(koniecGry, zwyciezca, false);
+        }
+
+        private bool sprawdzCzyRemis()
+        {
+            bool remis = true;
+            foreach (Button przycisk in graPrzyciski)
+            {
+                if (przycisk.IsEnabled == true)
+                {
+                    remis = false;
+                    break;
+                }
+            }
+
+            return remis;
+        }
 
     }
 }

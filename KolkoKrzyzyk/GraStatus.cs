@@ -10,19 +10,22 @@ namespace KolkoKrzyzyk
     class GraStatus
     {
         public bool koniecGry;
+        public bool remis;
         public string zwyciezca;
 
         public GraStatus()
         {
             koniecGry = false;
+            remis = false;
             zwyciezca = null;
         }
 
         //zwrocenie status gry
-        public GraStatus(bool koniecGry, string zwyciezca)
+        public GraStatus(bool koniecGry, string zwyciezca, bool remis)
         {
             this.koniecGry = koniecGry;
             this.zwyciezca = zwyciezca;
+            this.remis = remis;
         }
 
         //zakonczenie gry
@@ -48,6 +51,11 @@ namespace KolkoKrzyzyk
         {
             return zwyciezca;
         }
-        
+
+        public bool jestRemis()
+        {
+            return remis;
+        }
+
     }
 }
