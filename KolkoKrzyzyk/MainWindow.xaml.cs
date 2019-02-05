@@ -277,9 +277,19 @@ namespace KolkoKrzyzyk
                     break;
                 }
             }
-
             return remis;
         }
 
+        //dodanie przycisku restartu gry
+        private void restartPrzycisck_Click(object wysylka, EventArgs zdarzenie)
+        {
+   
+            foreach (Button przycisck in graPrzyciski)
+            {
+                przycisck.IsEnabled = true;
+                przycisck.Content = "";
+            }
+            AKCJA = true;
+        }
     }
 }

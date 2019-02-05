@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KolkoKrzyzyk"
         mc:Ignorable="d"
-    Title="gra Kółko Krzyżyk" Height="610" Width="368" ResizeMode="NoResize" Background="Silver">
+    Title="gra Kółko Krzyżyk" Height="630" Width="376" ResizeMode="NoResize" Background="#3399CC">
     <Grid Margin="0,0,0,0">
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="85"></RowDefinition>
             <RowDefinition Height="120"></RowDefinition>
             <RowDefinition Height="120"></RowDefinition>
             <RowDefinition Height="120"></RowDefinition>
@@ -21,6 +22,9 @@
             <ColumnDefinition Width="120"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <Button Name="zresetujGre" Grid.Column="0" Grid.Row="0" Width="70" Height="70" Click="restartPrzycisck_Click" >
+            <Image Grid.Column="0" Grid.Row="0" Source="restart.png" Stretch="Fill" Width="64" RenderTransformOrigin="3.5,0.333" Margin="0,0,0,0"/>
+        </Button>
         <Button Name="wiersz1pole1" Grid.Column="0" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
         <Button Name="wiersz1pole2" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial"/>
         <Button Name="wiersz1pole3" Grid.Column="2" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" FontSize="36" Click="startGry_Przycisk" FontFamily="arial" />
@@ -33,12 +37,12 @@
 
 
         <Grid Grid.Column="0" Grid.Row="4" Margin="10,10,10,-106" Grid.ColumnSpan="3">
-            <Label Name="gracz1" Content="gracz 1" Width="159" Height="68" FontSize="36" Margin="0,0,181,149" />
-            <Label Name="gracz2" Content="gracz 2" Height="68" FontSize="36" Margin="171,0,0,149" />
-            <Label Name="pkt" Content="pkt:" Height="68" FontSize="36" Margin="2,89,169,60" />
-            <Label Name="wygrywaX" Grid.Column="0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="87" Height="68" FontSize="36" Margin="72,89,181,60"/>
-            <Label Name="pkt2" Content="pkt:" Height="68" FontSize="36" Margin="171,89,0,60" />
-            <Label Name="wygrywa0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84" Height="68" FontSize="36" Margin="246,89,10,60"/>
+            <Label Name="gracz1" Content="Gracz 1" Width="159" Height="68" FontSize="36" Margin="0,0,181,149" FontFamily="arial"/>
+            <Label Name="gracz2" Content="Gracz 2" Height="68" FontSize="36" Margin="171,0,0,149" FontFamily="arial"/>
+            <Label Name="pkt" Content="Pkt:" Height="68" FontSize="36" Margin="2,89,169,60" FontFamily="arial" />
+            <Label Name="wygrywaX" Grid.Column="0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="87" Height="68" FontSize="36" Margin="72,89,181,60" FontFamily="arial"/>
+            <Label Name="pkt2" Content="Pkt:" Height="68" FontSize="36" Margin="171,89,0,60" FontFamily="arial"/>
+            <Label Name="wygrywa0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84" Height="68" FontSize="36" Margin="246,89,10,60" FontFamily="arial"/>
         </Grid>
     </Grid>
 </Window>
