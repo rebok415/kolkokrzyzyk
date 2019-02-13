@@ -28,3 +28,7 @@ C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.csproj.GenerateR
 C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.csproj.CoreCompileInputs.cache
 C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.exe
 C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.pdb
+C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\bin\Debug\KolkoKrzyzyk.exe.manifest
+C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\bin\Debug\KolkoKrzyzyk.application
+C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.exe.manifest
+C:\Users\Robek\kolkokrzyzyk\KolkoKrzyzyk\obj\Debug\KolkoKrzyzyk.application
